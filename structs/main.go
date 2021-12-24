@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type person struct {
 	firstName string
@@ -17,9 +19,8 @@ func (p person) print() {
 	fmt.Printf("%+v", p)
 }
 
-func (p person) updateName(newFirstName string) {
-	p.firstName = newFirstName
-
+func (person *person) updateName(newFirstName string) {
+	person.firstName = newFirstName
 }
 
 func main() {
